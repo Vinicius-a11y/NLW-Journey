@@ -7,15 +7,14 @@ import { Guests } from "./guests";
 import { DestinationAndDateHeader } from "./destination-and-date-header";
 
 export function TripDetailsPage() {
-  const [isCreateActivityModalOpen, setIsCreateActivityModalOpen] =
-    useState(false);
+  const [isCreateActivityModalOpen, setIsCreateActivityModalOpen] = useState(false)
 
   function openCreateActivityModal() {
-    setIsCreateActivityModalOpen(true);
+    setIsCreateActivityModalOpen(true)
   }
 
   function closeCreateActivityModal() {
-    setIsCreateActivityModalOpen(false);
+    setIsCreateActivityModalOpen(false)
   }
 
   return (
@@ -26,12 +25,10 @@ export function TripDetailsPage() {
         <div className="flex-1 space-y-6">
           <div className="flex items-center justify-between">
             <h2 className="text-3xl font-semibold">Atividades</h2>
-            <button
-              onClick={openCreateActivityModal}
-              className="bg-lime-300 text-line-950 rounded-lg px-5 py-2 font-medium flex items-center gap-2 hover:bg-lime-400"
-            >
-              Cadastrar atividade
+
+            <button onClick={openCreateActivityModal} className="bg-lime-300 text-lime-950 rounded-lg px-5 py-2 font-medium flex items-center gap-2 hover:bg-lime-400">
               <Plus className="size-5" />
+              Cadastrar atividade
             </button>
           </div>
 
@@ -41,17 +38,17 @@ export function TripDetailsPage() {
         <div className="w-80 space-y-6">
           <ImportantLinks />
 
-          <div className="w-px h-6 bg-zinc-800" />
+          <div className="w-full h-px bg-zinc-800" />
 
           <Guests />
         </div>
       </main>
 
       {isCreateActivityModalOpen && (
-        <CreateActivityModal
+        <CreateActivityModal 
           closeCreateActivityModal={closeCreateActivityModal}
         />
       )}
     </div>
-  );
+  )
 }
